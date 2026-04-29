@@ -1,4 +1,4 @@
-# 🎌 Interactive Manga Style Portfolio
+# Interactive Manga Style Portfolio
 
 Un portafolio interactivo de desarrollo web construido con HTML, CSS puro y Bootstrap 5, diseñado con una estética única inspirada en el Manga japonés (alto contraste en blanco y negro) combinada con efectos dinámicos de neón.
 
@@ -24,7 +24,7 @@ Al ser un proyecto estático puro, no requiere instalación de dependencias de N
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/AxxN202/tu-repositorio.git
+   https://github.com/AxxN202/Portafolio.git
    ```
 2. Navega al directorio principal del proyecto.
 3. Simplemente abre el archivo `index.html` en tu navegador web favorito (Chrome, Firefox, Edge).
