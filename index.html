@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio Profesional</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <article class="card__container container-fluid py-5">
+
+    <!-- 1. SOBRE MÍ -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Sobre Mí</span>
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
+      <div class="card-content p-4 text-center">
+        <div class="polaroid mb-3">
+          <div class="polaroid-image">
+            <i class="fas fa-user-circle"></i>
+          </div>
+
+        </div>
+        <h2 class="h5 fw-bold mb-1">Manuel Ayala Arias</h2>
+        <p class="text-warning small fw-bold mb-3">Desarrollador y Programador Fronted</p>
+        <p class="x-small text-muted mb-4">Apasionado por crear soluciones tecnológicas innovadoras. Estudiante de
+          Ingeniería con experiencia en desarrollo web.</p>
+
+        <div class="text-start x-small mb-4">
+          <div class="mb-2"><i class="fas fa-map-marker-alt me-2 text-warning"></i> Medellin, Colombia</div>
+          <div class="mb-2"><i class="fas fa-envelope me-2 text-warning"></i> Manuelayalaarias@gmail.com</div>
+          <div><i class="fas fa-phone-alt me-2 text-warning"></i> +57 3014628473</div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-3">
+          <a href="https://github.com/AxxN202" target="_blank" class="text-dark"><i class="fab fa-github fs-5"></i></a>
+          <a href="#" onclick="alert('Próximamente'); return false;" class="text-dark"><i
+              class="fab fa-linkedin fs-5"></i></a>
+          <a href="https://wa.me/573014628473" target="_blank" class="text-success"><i
+              class="fab fa-whatsapp fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PROYECTOS (GRID) -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Proyectos</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="card-content p-4">
+        <div class="project-grid mb-4">
+          <div class="project-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>POS-Ventas</span>
+          </div>
+          <div class="project-item">
+            <i class="fas fa-comments"></i>
+            <span>Pagina MediAlert</span>
+          </div>
+          <div class="project-item">
+            <i class="fas fa-tasks"></i>
+            <span>Administracion Inventario</span>
+          </div>
+          <div class="project-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>App Historias Clinicas</span>
+          </div>
+        </div>
+        <a href="https://github.com/AxxN202?tab=repositories" target="_blank"
+          class="btn btn-outline-dark w-100 x-small rounded-pill">Explorar Repositorio <i
+            class="fab fa-github ms-1"></i></a>
+      </div>
+    </div>
+
+    <!-- 3. PROYECTO DESTACADO -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Proyecto Destacado</span>
+      </div>
+      <div class="card-content p-4 text-center">
+        <div class="mx-auto mb-4 bg-dark text-white rounded-4 d-flex align-items-center justify-content-center"
+          style="width: 80px; height: 80px;">
+          <i class="fas fa-shopping-cart fa-2x"></i>
+        </div>
+        <h3 class="h5 fw-bold">POS- Pulso Vital</h3>
+        <p class="x-small text-muted mb-4">Plataforma completa con carrito de compras, pasarela de pagos y panel admin.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+          <span class="badge bg-light text-dark x-small">React</span>
+          <span class="badge bg-light text-dark x-small">Node.js</span>
+          <span class="badge bg-light text-dark x-small">SQLite</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. LENGUAJES -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Lenguajes</span>
+        <i class="fas fa-code"></i>
+      </div>
+      <div class="card-content p-4">
+        <div class="skill-bar-container">
+          <div class="d-flex justify-content-between x-small fw-bold">
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 70%;"></div>
+          </div>
+        </div>
+        <div class="skill-bar-container">
+          <div class="d-flex justify-content-between x-small fw-bold">
+            <span>Python</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 67%;"></div>
+          </div>
+        </div>
+        <div class="skill-bar-container">
+          <div class="d-flex justify-content-between x-small fw-bold">
+            <span>Java</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 51%;"></div>
+          </div>
+        </div>
+        <div class="skill-bar-container">
+          <div class="d-flex justify-content-between x-small fw-bold">
+            <span>HTML/CSS</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 95%;"></div>
+          </div>
+        </div>
+        <div class="skill-bar-container">
+          <div class="d-flex justify-content-between x-small fw-bold">
+            <span>SQL</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. HERRAMIENTAS -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Herramientas</span>
+        <i class="fas fa-tools"></i>
+      </div>
+      <div class="card-content p-4">
+        <div class="tool-grid">
+          <div class="tool-item"><i class="fab fa-git-alt text-success"></i>Git</div>
+          <div class="tool-item"><i class="fab fa-bootstrap text-primary"></i>Bootstrap</div>
+          <div class="tool-item"><i class="fas fa-database text-info"></i>MySQL</div>
+          <div class="tool-item"><i class="fab fa-react text-info"></i>React</div>
+          <div class="tool-item"><i class="fab fa-docker text-primary"></i>Docker</div>
+          <div class="tool-item"><i class="fas fa-code text-success"></i>VS Code</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. EXPERIENCIA -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Experiencia</span>
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <div class="card-content p-4">
+        <div class="timeline mb-4">
+          <div class="timeline-node" style="border-color: #28a745;"></div>
+          <h3 class="h6 fw-bold mb-0">Desarrollador Jr.</h3>
+          <p class="x-small text-success mb-1">Farmacia Pulso Vital</p>
+          <p class="x-small text-muted mb-2">2025 - Presente</p>
+          <p class="x-small text-muted mb-0">Desarrollo de aplicaciones web con React y Node.js.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-node" style="border-color: #e83e8c;"></div>
+          <h3 class="h6 fw-bold mb-0">Programador Fronted</h3>
+          <p class="x-small text-danger mb-1">Startup Innovación</p>
+          <p class="x-small text-muted mb-2">2024</p>
+          <p class="x-small text-muted mb-0">Frontend con HTML, CSS y JavaScript.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. CONTACTO -->
+    <div class="card mobile" tabindex="0">
+      <div class="card-header">
+        <span>Contacto</span>
+        <i class="fas fa-comment"></i>
+      </div>
+      <div class="card-content p-4 text-center">
+        <p class="x-small text-muted mb-4">¿Interesado en trabajar juntos?<br>¡Contáctame!</p>
+        <button class="btn btn-dark w-100 mb-4 py-2 x-small fw-bold"
+          onclick="window.location.href='mailto:tu@email.com'"><i class="fas fa-envelope me-2"></i> Enviar
+          Email</button>
+
+        <div class="d-flex justify-content-center gap-4">
+          <a href="https://github.com/AxxN202" target="_blank" class="text-dark"><i class="fab fa-github fs-5"></i></a>
+          <a href="#" onclick="alert('Próximamente'); return false;" class="text-dark"><i
+              class="fab fa-linkedin fs-5"></i></a>
+          <a href="https://wa.me/573014628473" target="_blank" class="text-success"><i
+              class="fab fa-whatsapp fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Ensure page starts at the top
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // Randomize glow color on each interaction
+    document.querySelectorAll('.card').forEach(card => {
+      const randomizeColor = () => {
+        const randomHue = Math.floor(Math.random() * 360);
+        card.style.setProperty('--random-hue', randomHue);
+      };
+
+      card.addEventListener('mouseenter', randomizeColor);
+      card.addEventListener('focusin', randomizeColor);
+    });
+  </script>
+</body>
+
+</html>

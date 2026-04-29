@@ -1,0 +1,533 @@
+:root {
+	--bg: 25% 0.0075 70;
+	--pink: 77.75% 0.1003 350.51;
+	--gold: 84.16% 0.1169 71.19;
+	--mint: 84.12% 0.1334 165.28;
+
+	--mobile--w: 340px;
+	--mobile--h: 500px;
+
+	--outline-w: 8px;
+	--preview-bg: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Outfit', sans-serif;
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.90)),
+		url('./imagen/Reseña-de-The-Promised-Neverland-8-Emma-El-Palomitrón.webp');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	overflow-x: hidden;
+}
+
+.card__container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	justify-content: center;
+	align-items: center;
+	perspective: 2000px;
+	padding: 2rem 1rem;
+	width: 100%;
+	max-width: 1450px;
+
+	&:has(.card:hover, .card:focus-within) {
+		.card:not(:hover, :focus-within) {
+			opacity: 0.4;
+			scale: 0.8;
+			filter: none;
+		}
+	}
+}
+
+.card {
+	--random-hue: 45;
+	background-color: #fcfcfc;
+	color: #1a1a1a;
+	border: var(--outline-w) solid #1a1a1a;
+	border-radius: 8px;
+	box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+
+	/* Grayscale defaults for Manga feel */
+	i,
+	span,
+	p,
+	h2,
+	h3 {
+		filter: grayscale(100%);
+		opacity: 0.8;
+	}
+
+	.badge {
+		background: #1a1a1a !important;
+		color: #fff !important;
+	}
+
+	transition: opacity 0.4s ease,
+	scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+	rotate 0.4s ease,
+	box-shadow 0.4s ease,
+	border-color 0.4s ease,
+	outline-offset 0.4s ease;
+
+	opacity: 0.8;
+	scale: 0.85;
+	rotate: var(--rotation, 0deg);
+	z-index: 1;
+
+	outline: var(--outline-w) solid var(--preview-bg);
+	outline-offset: var(--outline-w);
+
+	min-height: var(--mobile--h);
+	width: var(--mobile--w);
+	max-width: calc(25% - 1.125rem); /* Forces 4 cards per row */
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: column;
+
+	animation: simple-entrance 0.8s ease-out backwards;
+	animation-delay: var(--delay);
+
+	&:focus-within,
+	&:hover {
+		opacity: 1;
+		scale: 1.05;
+		z-index: 20;
+		outline-offset: calc(var(--outline-w) / 2);
+
+		/* Dynamic Random Glow */
+		--glow-color: oklch(80% 0.15 var(--random-hue));
+		box-shadow: 0 0 150px 20px var(--glow-color);
+		border-color: var(--glow-color);
+		background-color: #ffffff;
+
+		/* Return color on hover */
+		i,
+		span,
+		p,
+		h2,
+		h3 {
+			filter: none;
+			opacity: 1;
+		}
+
+		.skill-progress {
+			background: var(--glow-color) !important;
+		}
+
+		.text-warning {
+			color: #3498db !important;
+		}
+
+		.text-success {
+			color: #28a745 !important;
+		}
+
+		.text-danger {
+			color: #dc3545 !important;
+		}
+	}
+
+	/* Manga Alternating Themes */
+	&:nth-of-type(1),
+	&:nth-of-type(4),
+	&:nth-of-type(6),
+	&:nth-of-type(7) {
+		background-color: #1a1a1a !important;
+		color: #e0e0e0 !important;
+		border-color: #333;
+
+		.card-header {
+			border-bottom-color: #333;
+			color: #888;
+		}
+
+		.text-warning,
+		.text-success,
+		.text-danger,
+		.text-primary,
+		.text-info,
+		.text-muted {
+			color: #888 !important;
+		}
+
+		.project-item,
+		.tool-item {
+			background: #252525;
+			border-color: #333;
+			color: #fff;
+		}
+
+		.skill-bar {
+			background: #222;
+		}
+
+		.timeline::before {
+			background: #333;
+		}
+
+		.timeline-node {
+			background: #1a1a1a;
+			border-color: #444;
+		}
+
+		.btn-outline-dark {
+			border-color: #444;
+			color: #fff;
+		}
+
+		.btn-dark {
+			background: #e0e0e0;
+			color: #000;
+		}
+
+		.d-flex a {
+			background: rgba(255, 255, 255, 0.1);
+			color: #fff !important;
+		}
+
+		&:hover {
+			background-color: #1a1a1a !important;
+			border-color: var(--glow-color) !important;
+			box-shadow: 0 0 100px 10px var(--glow-color) !important;
+		}
+	}
+
+	/* Parabolic / Fan rotations */
+	&:nth-of-type(1) {
+		--rotation: -5deg;
+		--delay: 0.1s;
+	}
+
+	&:nth-of-type(2) {
+		--rotation: 5deg;
+		--delay: 0.2s;
+	}
+
+	&:nth-of-type(3) {
+		--rotation: -5deg;
+		--delay: 0.3s;
+	}
+
+	&:nth-of-type(4) {
+		--rotation: 0deg;
+		--delay: 0.4s;
+	}
+
+	&:nth-of-type(5) {
+		--rotation: -6deg;
+		--delay: 0.5s;
+	}
+
+	&:nth-of-type(6) {
+		--rotation: 7deg;
+		--delay: 0.6s;
+	}
+
+	&:nth-of-type(7) {
+		--rotation: 3deg;
+		--delay: 0.7s;
+	}
+}
+
+.card-content {
+	flex: 1;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #ccc transparent;
+}
+
+.card-content::-webkit-scrollbar {
+	width: 4px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 10px;
+}
+
+/* Helper Classes */
+.text-orange {
+	color: #f06529;
+}
+
+.text-blue {
+	color: #2965f1;
+}
+
+.text-yellow {
+	color: #f7df1e;
+}
+
+.text-purple {
+	color: #7952b3;
+}
+
+.x-small {
+	font-size: 0.75rem;
+}
+
+.profile-pic {
+	width: 100px;
+	height: 100px;
+	background: #f1f3f5;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #adb5bd;
+}
+
+/* Polaroid Style */
+.polaroid {
+	background: white;
+	padding: 10px 10px 25px 10px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	rotate: -3deg;
+	transition: all 0.3s ease;
+	border: 1px solid #eee;
+}
+
+.card:hover .polaroid {
+	rotate: 0deg;
+	scale: 1.05;
+}
+
+.polaroid-image {
+	width: 140px;
+	height: 140px;
+	background: #f8f9fa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border: 1px solid #eee;
+	color: #adb5bd;
+}
+
+.polaroid-image i {
+	font-size: 4rem;
+}
+
+.polaroid-caption {
+	margin-top: 10px;
+	color: #444;
+	font-weight: 700;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Professional UI Enhancements */
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid #f1f1f1;
+	color: #999;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	letter-spacing: 1.5px;
+	font-weight: 700;
+}
+
+.timeline {
+	position: relative;
+	padding-left: 2rem;
+}
+
+.timeline-node {
+	position: absolute;
+	left: 0;
+	top: 5px;
+	width: 12px;
+	height: 12px;
+	background: #fff;
+	border: 2px solid oklch(var(--gold));
+	border-radius: 50%;
+	z-index: 2;
+}
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	bottom: 0;
+	width: 2px;
+	background: #eee;
+	z-index: 1;
+}
+
+.skill-bar-container {
+	margin-bottom: 1rem;
+}
+
+.skill-bar {
+	height: 8px;
+	background: #f1f1f1;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-top: 5px;
+}
+
+.skill-progress {
+	height: 100%;
+	background: linear-gradient(90deg, oklch(var(--gold)), oklch(var(--pink)));
+	border-radius: 4px;
+}
+
+.tool-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.tool-item {
+	background: #f9f9f9;
+	border-radius: 12px;
+	padding: 15px 10px;
+	text-align: center;
+	font-size: 0.7rem;
+	transition: transform 0.3s ease;
+}
+
+.tool-item:hover {
+	transform: translateY(-5px);
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tool-item i {
+	font-size: 1.5rem;
+	margin-bottom: 8px;
+	display: block;
+}
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+
+.project-item {
+	aspect-ratio: 1/1;
+	background: #f9f9f9;
+	border: 1px solid #eee;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75rem;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.project-item:hover {
+	background: #fff;
+	border-color: oklch(var(--gold));
+	color: oklch(var(--gold));
+}
+
+.project-item i {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+.btn-demo {
+	background: #212529;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	font-weight: 600;
+	padding: 10px 20px;
+}
+
+.btn-code {
+	background: #fff;
+	color: #212529;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	font-weight: 600;
+	padding: 10px 20px;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+	.card__container {
+		gap: 2rem;
+		padding: 4rem 1rem;
+	}
+
+	.card {
+		--rotation: 0deg !important;
+		scale: 1 !important;
+		opacity: 1 !important;
+		animation: none !important;
+		max-width: 100%; /* Override 4-column desktop rule */
+	}
+}
+
+/* Enhanced Contact Icons Visibility */
+.card .d-flex.gap-3 a,
+.card .d-flex.gap-4 a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background: rgba(100, 100, 100, 0.2);
+	color: #fff !important;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	filter: none !important;
+	opacity: 1 !important;
+	font-size: 1.2rem;
+	margin: 0 5px;
+}
+
+.card .d-flex.gap-3 a:hover,
+.card .d-flex.gap-4 a:hover {
+	background: var(--glow-color, #fff);
+	color: #000 !important;
+	transform: translateY(-5px) scale(1.1);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card i.fab {
+	filter: none !important;
+	opacity: 1 !important;
+}
+
+@keyframes simple-entrance {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 0.8;
+		transform: translateY(0);
+	}
+}
