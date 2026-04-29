@@ -1,4 +1,4 @@
-# Interactive Manga Style Portfolio
+# Portafolio Interactivo Estilo Manga
 
 Un portafolio interactivo de desarrollo web construido con HTML, CSS puro y Bootstrap 5, diseñado con una estética única inspirada en el Manga japonés (alto contraste en blanco y negro) combinada con efectos dinámicos de neón.
 
